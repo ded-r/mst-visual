@@ -20,7 +20,7 @@ let executeKruskal = function (graph) {
     actualGraph = graph;
     let result = kruskal(graph);
 
-    for (var i = 0; i < graph.directedEdges.length; i++) {
+    for (let i = 0; i < graph.directedEdges.length; i++) {
         graph.directedEdges[i].fill = '#DCDCDC';
         graph.directedEdges[i].fillText = '#DCDCDC';
     }
@@ -47,7 +47,7 @@ let updateEdges = function (result, i) {
     count = i;
     results = result;
 
-    if (i != result.length) {
+    if (i !== result.length) {
         setTimeout("updateEdges(results, count+1)", 1000)
     }
 }
@@ -56,17 +56,17 @@ let kruskal = function (graph) {
 
     let queue = PriorityQueue({low: true});
     let n = graph.vertices.length;
-    let acm = new Array();
+    let acm = [];
     let l = new Array(graph.vertices.length);
 
-    for (var i = 0; i < l.length; i++) {
+    for (let i = 0; i < l.length; i++) {
 
-        l[i] = new Array();
+        l[i] = [];
         l[i].push(i); // An array containing arrays with the index value of each array...
     }
 
     // Adding the edges to the queue...
-    for (var i = 0; i < graph.directedEdges.length; i++) {
+    for (let i = 0; i < graph.directedEdges.length; i++) {
         queue.push(graph.directedEdges[i], graph.directedEdges[i].value);
     }
 
@@ -77,7 +77,7 @@ let kruskal = function (graph) {
         let acm1 = kruskal_Find(edge.start.id - 1, l);
         let acm2 = kruskal_Find(edge.end.id - 1, l);
 
-        if (acm1 != acm2) {
+        if (acm1 !== acm2) {
             kruskal_Merge(acm1, acm2, l);
             acm.push(edge);
         }
@@ -88,15 +88,15 @@ let kruskal = function (graph) {
 }
 
 let kruskal_Find = function (idVertice, l) {
-    for (var i = 0; i < l.length; i++) {
-        for (var j = 0; j < l[i].length; j++) {
-            if (l[i][j] == idVertice) return i;
+    for (let i = 0; i < l.length; i++) {
+        for (let j = 0; j < l[i].length; j++) {
+            if (l[i][j] === idVertice) return i;
         }
     }
 }
 
 let kruskal_Merge = function (acm1, acm2, l) {
-    while (l[acm2].length != 0) {
+    while (l[acm2].length !== 0) {
         l[acm1].push(l[acm2].pop())
     }
 }
