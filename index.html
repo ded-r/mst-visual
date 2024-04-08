@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Algo Visualization</title>
+</head>
+<body>
+<div id="main">
+    <div id="navigation">
+        <h1 class="text-center text-3xl bg-black text-white">Minimum Spanning Tree Visualization</h1>
+        <div id="list">
+            <ul id="list-options">
+                <li class="Menu-Item" id="addNewGraph">New Graph</li>
+                <li class="Menu-Item" id="addVertex">Add Node</li>
+                <li class="Menu-Item" id="addDirectedEdge">Add directed edge</li>
+                <li class="Menu-Item" id="addUndirectedEdge">Add undirected edge</li>
+                <li class="Menu-Item" id="moveNode">Move Node</li>
+            </ul>
+            <h3 id="list-algo">Algorithms</h3>
+            <select id="selectedAlgo">
+                <option value="1">Kruskal</option>
+                <option value="2">Dijkstra</option>
+            </select>
+
+            <a href="#" id="executeAlgo">Run</a>
+            <a href="#" id="resetGraph">Clear</a>
+        </div>
+    </div>
+</div>
+
+<div id="container">
+    <div id="mainContainer">
+        <canvas id="canvas" width="1100" height="100%" onmousemove="onMouseMove(event)"></canvas>
+    </div>
+
+</div>
+
+<div id="context_menu">
+    <ul>
+        <li id="edit">Modify</li>
+        <li id="remove">Remove</li>
+    </ul>
+</div>
+<script src="js/canvas.js"></script>
+<script src="js/algorithm.js"></script>
+<script src="js/priorityQueue.js"></script>
+</body>
+</html>
