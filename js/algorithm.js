@@ -21,8 +21,9 @@ let executeKruskal = function (graph) {
     let result = kruskal(graph);
 
     for (let i = 0; i < graph.directedEdges.length; i++) {
-        graph.directedEdges[i].fill = '#DCDCDC';
-        graph.directedEdges[i].fillText = '#DCDCDC';
+        // graph.directedEdges[i].fill = '#DCDCDC';
+        graph.directedEdges[i].fill = '#757557';
+        graph.directedEdges[i].fillText = '#757575';
     }
     updateEdges(result, 0);
 }

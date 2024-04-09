@@ -32,7 +32,7 @@ class DirectedEdge {
         this.value = value;
         this.start = start;
         this.end = end;
-        this.fill = '#C5C5C5';
+        this.fill = '#757575';
         this.fillText = "#2D2D2D";
     }
 }
@@ -333,7 +333,7 @@ class Graph {
             }
 
             for (let i in this.directedEdges) {
-                this.directedEdges[i].fill = '#C5C5C5';
+                this.directedEdges[i].fill = '#757575';
                 this.directedEdges[i].fillText = '#2D2D2D';
             }
 
@@ -413,7 +413,7 @@ function onMouseUp(event) {
                         let Existe = graph.searchDirectedEdge(finalVertex, graph.vertexSelected);
                         if (Existe == null) {
                             //there's no edge at all between the two points, so we need to create one...
-                            let edgeValue = prompt('Create edge', '2'); // for the value of the edge...
+                            let edgeValue = prompt('Enter edge weight', '2'); // for the value of the edge...
                             if (edgeValue != null) {
                                 graph.addDirectedEdge(graph.vertexSelected.id, finalVertex.id, edgeValue);
                                 // Creating the edge between the two with the value given by the user...
@@ -435,7 +435,7 @@ function onMouseUp(event) {
             } else {
                 if (graph.vertexSelected !== finalVertex) {
                     if (graph.searchDirectedEdge(graph.vertexSelected, finalVertex) == null) {
-                        let edgeValue = prompt('Create edge', '2');
+                        let edgeValue = prompt('Enter edge weight', '2');
                         if (edgeValue != null) {
                             graph.addDirectedEdge(graph.vertexSelected.id, finalVertex.id, edgeValue);
                             graph.addDirectedEdge(finalVertex.id, graph.vertexSelected.id, edgeValue);
@@ -508,10 +508,10 @@ const selectedAlgo = document.getElementById('selectedAlgo')
 
 
 function selectItem(element, opt) {
-    addVertex.classList.remove('Menu-Item-Selected');
-    addDirectedEdge.classList.remove('Menu-Item-Selected');
-    addUndirectedEdge.classList.remove('Menu-Item-Selected');
-    moveNode.classList.remove('Menu-Item-Selected');
+    // addVertex.classList.remove('Menu-Item-Selected');
+    // addDirectedEdge.classList.remove('Menu-Item-Selected');
+    // addUndirectedEdge.classList.remove('Menu-Item-Selected');
+    // moveNode.classList.remove('Menu-Item-Selected');
 
     addVertex.classList.remove('border-red-500');
     addDirectedEdge.classList.remove('border-red-500');
