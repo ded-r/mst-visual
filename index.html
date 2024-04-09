@@ -11,28 +11,26 @@
 </head>
 <body>
 <div id="main">
-    <div id="navigation">
-        <h1 class="text-center text-3xl bg-black text-white">Minimum Spanning Tree Visualization</h1>
-        <div id="list">
-            <ul id="list-options">
-                <li class="Menu-Item" id="addNewGraph">New Graph</li>
-                <li class="Menu-Item" id="addVertex">Add Node</li>
-                <li class="Menu-Item" id="addDirectedEdge">Add directed edge</li>
-                <li class="Menu-Item" id="addUndirectedEdge">Add undirected edge</li>
-                <li class="Menu-Item" id="moveNode">Move Node</li>
-            </ul>
-            <h3 id="list-algo">Algorithms</h3>
-            <label for="selectedAlgo"></label><select id="selectedAlgo">
-                <option value="1">Kruskal</option>
-                <option value="2">Dijkstra</option>
-            </select>
-            <a href="#" id="executeAlgo">Run</a>
-            <a href="#" id="resetGraph">Clear</a>
-        </div>
+    <div class="text-center">
+        <h1 class="text-3xl bg-black text-white py-2">Minimum Spanning Tree Visualization</h1>
+        <ul class="my-5 flex justify-center">
+            <button class="mx-3 px-2 border-black border-2" id="addNewGraph">New Graph</button>
+            <button class="mx-3 px-2 border-black border-2" id="addVertex">Add Node</button>
+            <button class="mx-3 px-2 border-black border-2" id="addDirectedEdge">Add directed edge</button>
+            <button class="mx-3 px-2 border-black border-2" id="addUndirectedEdge">Add undirected edge</button>
+            <button class="mx-3 px-2 border-black border-2" id="moveNode">Move Node</button>
+        </ul>
+        <h3 class="">Select Algorithm</h3>
+        <select id="selectedAlgo">
+            <option value="1">Kruskal</option>
+            <option value="2">Dijkstra</option>
+        </select>
+        <button id="executeAlgo" class="mx-3 px-2 border-black border-2">Run</button>
+        <button id="resetGraph" class="mx-3 px-2 border-black border-2">Clear</button>
     </div>
 </div>
 
-<div id="container">
+<div id="container" class="border-black">
     <div id="mainContainer">
         <canvas id="canvas" width="1100" height="100%" onmousemove="onMouseMove(event)"></canvas>
     </div>

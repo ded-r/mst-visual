@@ -400,7 +400,6 @@ function onMouseUp(event) {
     if (event.button === 0) {
         if (option === 3) {
             let finalVertex = graph.clickedVertex(mouseX, mouseY);
-
             if (finalVertex == null) {
                 graph.update()
             } else {
@@ -425,7 +424,6 @@ function onMouseUp(event) {
                     } else {
                         alert("Edge already exists!");
                     }
-
                     graph.update();
                 }
             }
@@ -515,7 +513,13 @@ function selectItem(element, opt) {
     addUndirectedEdge.classList.remove('Menu-Item-Selected');
     moveNode.classList.remove('Menu-Item-Selected');
 
+    addVertex.classList.remove('border-red-500');
+    addDirectedEdge.classList.remove('border-red-500');
+    addUndirectedEdge.classList.remove('border-red-500');
+    moveNode.classList.remove('border-red-500');
+
     element.classList.add('Menu-Item-Selected');
+    element.classList.add('border-red-500');
     option = opt;
 }
 
@@ -535,6 +539,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirm('Are you sure you want to create new graph? Current graph will be lost.')) {
             createGraph();
             graph.update();
+            addVertex.classList.remove('border-red-500');
+            addDirectedEdge.classList.remove('border-red-500');
+            addUndirectedEdge.classList.remove('border-red-500');
+            moveNode.classList.remove('border-red-500');
         }
     })
 
